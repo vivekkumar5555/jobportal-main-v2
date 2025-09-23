@@ -29,25 +29,27 @@ const FilterCard = () => {
         dispatch(setSearchedQuery(selectedValue));
     },[selectedValue]);
     return (
-        <div className='w-full bg-white p-3 rounded-md'>
-            <h1 className='font-bold text-lg'>Filter Jobs</h1>
-            <hr className='mt-3' />
-            <RadioGroup value={selectedValue} onValueChange={changeHandler}>
+        <div className='w-full bg-white p-3 sm:p-4 rounded-md shadow-sm border border-gray-100'>
+            <h1 className='font-bold text-base sm:text-lg mb-3'>Filter Jobs</h1>
+            <hr className='mb-4' />
+            <RadioGroup value={selectedValue} onValueChange={changeHandler} className="space-y-4">
                 {
                     fitlerData.map((data, index) => (
-                        <div>
-                            <h1 className='font-bold text-lg'>{data.fitlerType}</h1>
-                            {
-                                data.array.map((item, idx) => {
-                                    const itemId = `id${index}-${idx}`
-                                    return (
-                                        <div className='flex items-center space-x-2 my-2'>
-                                            <RadioGroupItem value={item} id={itemId} />
-                                            <Label htmlFor={itemId}>{item}</Label>
-                                        </div>
-                                    )
-                                })
-                            }
+                        <div key={index} className="space-y-2">
+                            <h2 className='font-semibold text-sm sm:text-base text-gray-800'>{data.fitlerType}</h2>
+                            <div className="space-y-2">
+                                {
+                                    data.array.map((item, idx) => {
+                                        const itemId = `id${index}-${idx}`
+                                        return (
+                                            <div key={idx} className='flex items-center space-x-2'>
+                                                <RadioGroupItem value={item} id={itemId} className="h-4 w-4" />
+                                                <Label htmlFor={itemId} className="text-xs sm:text-sm cursor-pointer">{item}</Label>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
                         </div>
                     ))
                 }

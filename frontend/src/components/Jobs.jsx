@@ -27,21 +27,25 @@ const Jobs = () => {
     return (
         <div>
             <Navbar />
-            <div className='max-w-7xl mx-auto mt-5'>
-                <div className='flex gap-5'>
-                    <div className='w-20%'>
+            <div className='max-w-7xl mx-auto mt-5 px-4 sm:px-6 lg:px-8'>
+                <div className='flex flex-col lg:flex-row gap-5'>
+                    <div className='w-full lg:w-80 xl:w-96'>
                         <FilterCard />
                     </div>
                     {
-                        filterJobs.length <= 0 ? <span>Job not found</span> : (
-                            <div className='flex-1 h-[88vh] overflow-y-auto pb-5'>
-                                <div className='grid grid-cols-3 gap-4'>
+                        filterJobs.length <= 0 ? (
+                            <div className='flex-1 flex items-center justify-center h-64'>
+                                <span className='text-gray-500 text-lg'>No jobs found matching your criteria</span>
+                            </div>
+                        ) : (
+                            <div className='flex-1 min-h-[70vh] lg:h-[88vh] overflow-y-auto pb-5'>
+                                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4'>
                                     {
                                         filterJobs.map((job) => (
                                             <motion.div
-                                                initial={{ opacity: 0, x: 100 }}
-                                                animate={{ opacity: 1, x: 0 }}
-                                                exit={{ opacity: 0, x: -100 }}
+                                                initial={{ opacity: 0, y: 20 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                exit={{ opacity: 0, y: -20 }}
                                                 transition={{ duration: 0.3 }}
                                                 key={job?._id}>
                                                 <Job job={job} />
@@ -54,8 +58,6 @@ const Jobs = () => {
                     }
                 </div>
             </div>
-
-
         </div>
     )
 }

@@ -3,6 +3,7 @@ import getDataUri from "../utils/datauri.js";
 import cloudinary from "../utils/cloudinary.js";
 
 export const registerCompany = async (req, res) => {
+    console.log("odfosd",req.id)
     try {
         const { companyName } = req.body;
         if (!companyName) {
@@ -11,7 +12,7 @@ export const registerCompany = async (req, res) => {
                 success: false
             });
         }
-        let company = await Company.findOne({ name: companyName });
+        let company = await Company.findOne({ name: companyName , userId:req.id});
         if (company) {
             return res.status(400).json({
                 message: "You can't register same company.",

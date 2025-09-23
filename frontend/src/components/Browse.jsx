@@ -19,18 +19,23 @@ const Browse = () => {
     return (
         <div>
             <Navbar />
-            <div className='max-w-7xl mx-auto my-10'>
-                <h1 className='font-bold text-xl my-10'>Search Results ({allJobs.length})</h1>
-                <div className='grid grid-cols-3 gap-4'>
+            <div className='max-w-7xl mx-auto my-8 sm:my-10 px-4 sm:px-6 lg:px-8'>
+                <h1 className='font-bold text-lg sm:text-xl my-6 sm:my-8 lg:my-10'>
+                    Search Results <span className="text-[#6A38C2]">({allJobs.length})</span>
+                </h1>
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6'>
                     {
-                        allJobs.map((job) => {
+                        allJobs.length === 0 ? (
+                            <div className="col-span-full flex items-center justify-center h-32">
+                                <span className="text-gray-500 text-lg">No jobs found</span>
+                            </div>
+                        ) : allJobs.map((job) => {
                             return (
                                 <Job key={job._id} job={job}/>
                             )
                         })
                     }
                 </div>
-
             </div>
         </div>
     )
