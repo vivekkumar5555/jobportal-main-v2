@@ -49,14 +49,18 @@ const Signup = () => {
         headers: { "Content-Type": "multipart/form-data" },
         withCredentials: true,
       });
-      console.log("fdfd",res)
+      console.log("fdfd", res);
       if (res.data.success) {
         navigate("/login");
         toast.success(res.data.message);
       }
     } catch (error) {
       console.log(error);
-      toast.error(error.response.data.message);
+      const errorMessage =
+        error.response?.data?.message ||
+        error.message ||
+        "Registration failed. Please try again.";
+      toast.error(errorMessage);
     } finally {
       dispatch(setLoading(false));
     }
@@ -75,8 +79,10 @@ const Signup = () => {
           onSubmit={submitHandler}
           className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-2/5 border border-gray-200 rounded-md p-4 sm:p-6 my-8 sm:my-10 shadow-lg bg-white"
         >
-          <h1 className="font-bold text-xl sm:text-2xl mb-5 text-center">Sign Up</h1>
-          
+          <h1 className="font-bold text-xl sm:text-2xl mb-5 text-center">
+            Sign Up
+          </h1>
+
           <div className="my-3">
             <Label className="text-sm font-medium">Full Name</Label>
             <Input
@@ -88,7 +94,7 @@ const Signup = () => {
               className="mt-1"
             />
           </div>
-          
+
           <div className="my-3">
             <Label className="text-sm font-medium">Email</Label>
             <Input
@@ -100,7 +106,7 @@ const Signup = () => {
               className="mt-1"
             />
           </div>
-          
+
           <div className="my-3">
             <Label className="text-sm font-medium">Phone Number</Label>
             <Input
@@ -112,7 +118,7 @@ const Signup = () => {
               className="mt-1"
             />
           </div>
-          
+
           <div className="my-3">
             <Label className="text-sm font-medium">Password</Label>
             <Input
@@ -124,9 +130,11 @@ const Signup = () => {
               className="mt-1"
             />
           </div>
-          
+
           <div className="my-4">
-            <Label className="text-sm font-medium mb-3 block">Select Role</Label>
+            <Label className="text-sm font-medium mb-3 block">
+              Select Role
+            </Label>
             <RadioGroup className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
               <div className="flex items-center space-x-2">
                 <Input
@@ -137,7 +145,9 @@ const Signup = () => {
                   onChange={changeEventHandler}
                   className="cursor-pointer"
                 />
-                <Label htmlFor="r1" className="cursor-pointer">Student</Label>
+                <Label htmlFor="r1" className="cursor-pointer">
+                  Student
+                </Label>
               </div>
               <div className="flex items-center space-x-2">
                 <Input
@@ -148,11 +158,13 @@ const Signup = () => {
                   onChange={changeEventHandler}
                   className="cursor-pointer"
                 />
-                <Label htmlFor="r2" className="cursor-pointer">Recruiter</Label>
+                <Label htmlFor="r2" className="cursor-pointer">
+                  Recruiter
+                </Label>
               </div>
             </RadioGroup>
           </div>
-          
+
           <div className="my-4">
             <Label className="text-sm font-medium">Profile Picture</Label>
             <Input
@@ -162,21 +174,27 @@ const Signup = () => {
               className="cursor-pointer mt-1"
             />
           </div>
-          
+
           {loading ? (
             <Button className="w-full my-4" disabled>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait
             </Button>
           ) : (
-            <Button type="submit" className="w-full my-4 bg-[#6A38C2] hover:bg-[#5b30a6]">
+            <Button
+              type="submit"
+              className="w-full my-4 bg-[#6A38C2] hover:bg-[#5b30a6]"
+            >
               Signup
             </Button>
           )}
-          
+
           <div className="text-center">
             <span className="text-sm text-gray-600">
               Already have an account?{" "}
-              <Link to="/login" className="text-[#6A38C2] hover:text-[#5b30a6] font-medium">
+              <Link
+                to="/login"
+                className="text-[#6A38C2] hover:text-[#5b30a6] font-medium"
+              >
                 Login
               </Link>
             </span>
