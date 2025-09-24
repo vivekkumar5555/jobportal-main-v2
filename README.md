@@ -5,6 +5,7 @@ A full-stack job portal application built with React, Node.js, and MongoDB. This
 ## 🚀 Features
 
 ### For Job Seekers
+
 - **Job Search & Discovery**: Advanced search functionality with filters
 - **User Registration & Authentication**: Secure signup/login system
 - **Profile Management**: Create and update professional profiles
@@ -13,12 +14,14 @@ A full-stack job portal application built with React, Node.js, and MongoDB. This
 - **Browse Jobs**: Explore jobs by category, location, and company
 
 ### For Recruiters
+
 - **Company Management**: Create and manage company profiles
 - **Job Posting**: Post new job opportunities
 - **Application Management**: Review and manage job applications
 - **Analytics Dashboard**: Track job performance and applications
 
 ### Technical Features
+
 - **Responsive Design**: Mobile-first approach with tablet and desktop support
 - **Modern UI/UX**: Built with Tailwind CSS and Radix UI components
 - **Real-time Updates**: Dynamic content updates using Redux
@@ -29,6 +32,7 @@ A full-stack job portal application built with React, Node.js, and MongoDB. This
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - **React 18** - Modern React with hooks and functional components
 - **Vite** - Fast build tool and development server
 - **Redux Toolkit** - State management
@@ -39,6 +43,7 @@ A full-stack job portal application built with React, Node.js, and MongoDB. This
 - **Axios** - HTTP client for API calls
 
 ### Backend
+
 - **Node.js** - Runtime environment
 - **Express.js** - Web framework
 - **MongoDB** - NoSQL database
@@ -52,6 +57,7 @@ A full-stack job portal application built with React, Node.js, and MongoDB. This
 ## 📦 Installation & Setup
 
 ### Prerequisites
+
 - Node.js (v16 or higher)
 - MongoDB (local or cloud instance)
 - Cloudinary account (for image uploads)
@@ -59,17 +65,20 @@ A full-stack job portal application built with React, Node.js, and MongoDB. This
 ### Backend Setup
 
 1. **Navigate to backend directory**
+
    ```bash
    cd backend
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Environment Configuration**
    Create a `.env` file in the backend directory:
+
    ```env
    PORT=8000
    MONGODB_URI=mongodb://localhost:27017/jobportal
@@ -88,17 +97,20 @@ A full-stack job portal application built with React, Node.js, and MongoDB. This
 ### Frontend Setup
 
 1. **Navigate to frontend directory**
+
    ```bash
    cd frontend
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Environment Configuration**
    Create a `.env` file in the frontend directory:
+
    ```env
    VITE_BACKEND_URL=http://localhost:8000
    ```
@@ -111,16 +123,19 @@ A full-stack job portal application built with React, Node.js, and MongoDB. This
 ## 🚀 Running the Application
 
 1. **Start MongoDB** (if using local instance)
+
    ```bash
    mongod
    ```
 
 2. **Start Backend Server**
+
    ```bash
    cd backend && npm run dev
    ```
 
 3. **Start Frontend Server**
+
    ```bash
    cd frontend && npm run dev
    ```
@@ -158,10 +173,12 @@ jobportal-main/
 ## 🔧 Available Scripts
 
 ### Backend Scripts
+
 - `npm run dev` - Start development server with nodemon
 - `npm start` - Start production server
 
 ### Frontend Scripts
+
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
@@ -197,6 +214,7 @@ The application is fully responsive with mobile-first design:
 ## 📊 API Endpoints
 
 ### User Routes
+
 - `POST /api/user/signup` - User registration
 - `POST /api/user/login` - User login
 - `GET /api/user/logout` - User logout
@@ -204,6 +222,7 @@ The application is fully responsive with mobile-first design:
 - `PUT /api/user/update` - Update user profile
 
 ### Job Routes
+
 - `GET /api/job/all` - Get all jobs
 - `POST /api/job/create` - Create new job (recruiter only)
 - `GET /api/job/:id` - Get job by ID
@@ -211,11 +230,13 @@ The application is fully responsive with mobile-first design:
 - `DELETE /api/job/:id` - Delete job (recruiter only)
 
 ### Application Routes
+
 - `POST /api/application/create` - Apply for job
 - `GET /api/application/my-applications` - Get user's applications
 - `GET /api/application/job/:id` - Get job applications (recruiter only)
 
 ### Company Routes
+
 - `GET /api/company/all` - Get all companies
 - `POST /api/company/create` - Create company (recruiter only)
 - `GET /api/company/:id` - Get company by ID
@@ -224,11 +245,13 @@ The application is fully responsive with mobile-first design:
 ## 🚀 Deployment
 
 ### Frontend Deployment (Vercel/Netlify)
+
 1. Build the project: `npm run build`
 2. Deploy the `dist` folder to your hosting platform
 3. Configure environment variables
 
 ### Backend Deployment (Railway/Heroku)
+
 1. Configure production environment variables
 2. Set up MongoDB Atlas for production database
 3. Deploy using your preferred platform
@@ -247,7 +270,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👥 Authors
 
-- **Your Name** - *Initial work* - [YourGitHub](https://github.com/yourusername)
+-Vivek kumar- 
 
 ## 🙏 Acknowledgments
 
